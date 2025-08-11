@@ -19,9 +19,11 @@ dependencyResolutionManagement {
     }
 }
 
+
 rootProject.name = "ThamanyaPodCast"
 include(":app")
 include(":core")
 include(":features")
 include(":features:feature-home")
 include(":features:feature-search")
+include(":design-system")
