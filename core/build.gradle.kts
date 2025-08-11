@@ -56,6 +56,4 @@ dependencies {
     // DI
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-    kapt("com.squareup:javapoet:1.13.0")
-    compileOnly("com.squareup:javapoet:1.13.0")
 }
