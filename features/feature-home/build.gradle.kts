@@ -48,6 +48,9 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
 
+//    // Pull-to-refresh
+//    implementation(libs.androidx.material3.pulltorefresh)
+
     // AndroidX
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx)
