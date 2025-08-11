@@ -1,0 +1,15 @@
+package com.elgohry.core.data.model
+
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class SectionDto(
+    val name: String,
+    // API sometimes sends "big square" and sometimes "big_square" -> keep raw then normalize in mapper
+    val type: String,
+    @SerialName("content_type") val contentType: ContentTypeDto,
+    val order: Int,
+    val content: List<SectionItemDto>
+)
+enum class ContentType { PODCAST, EPISODE, AUDIO_BOOK, AUDIO_ARTICLE }
