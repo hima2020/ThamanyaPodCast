@@ -37,29 +37,24 @@ fun SectionDto.toDomain(): Section {
         ContentTypeDto.AUDIO_ARTICLE -> ContentType.AUDIO_ARTICLE
     }
 
-    val itemsDomain: List<SectionItem> = when (cType) {
-        ContentType.PODCAST -> content.mapNotNull { it.asPodcast() }
-        ContentType.EPISODE -> content.mapNotNull { it.asEpisode() }
-        ContentType.AUDIO_BOOK -> content.mapNotNull { it.asAudioBook() }
-        ContentType.AUDIO_ARTICLE -> content.mapNotNull { it.asAudioArticle() }
-    }
 
     return Section(
         name = name,
         type = typeDomain,
         contentType = cType,
         order = order,
-        items = itemsDomain
+        items = content.mapNotNull { it.toDomain() }
     )
 }
 
-private fun SectionItemDto.asPodcast(): SectionItem.Podcast? {
-    val id = podcastId ?: return null
-    return SectionItem.Podcast(
+private fun SectionItemDto.toDomain(): SectionItem? {
+    val id = podcastId ?: episodeId?:audiobookId?:articleId?:return null
+    return SectionItem(
         id = id,
         name = name.orEmpty(),
         descriptionHtml = description,
         avatarUrl = avatarUrl,
+        authorName=authorName,
         episodeCount = episodeCount,
         durationSec = duration,
         language = language,
@@ -69,51 +64,4 @@ private fun SectionItemDto.asPodcast(): SectionItem.Podcast? {
     )
 }
 
-private fun SectionItemDto.asEpisode(): SectionItem.Episode? {
-    val id = episodeId ?: return null
-    return SectionItem.Episode(
-        id = id,
-        name = name.orEmpty(),
-        podcastName = podcastName,
-        authorName = authorName,
-        type = episodeType,
-        number = number,
-        durationSec = duration,
-        avatarUrl = avatarUrl,
-        audioUrl = audioUrl,
-        separatedAudioUrl = separatedAudioUrl,
-        releaseDateIso = releaseDate,
-        popularityScore = episodePodcastPopularityScore ?: popularityScore,
-        priority = episodePodcastPriority ?: priority,
-        score = score
-    )
-}
 
-private fun SectionItemDto.asAudioBook(): SectionItem.AudioBook? {
-    val id = audiobookId ?: return null
-    return SectionItem.AudioBook(
-        id = id,
-        name = name.orEmpty(),
-        authorName = authorName,
-        description = description,
-        avatarUrl = avatarUrl,
-        durationSec = duration,
-        language = language,
-        releaseDateIso = releaseDate,
-        score = score
-    )
-}
-
-private fun SectionItemDto.asAudioArticle(): SectionItem.AudioArticle? {
-    val id = articleId ?: return null
-    return SectionItem.AudioArticle(
-        id = id,
-        name = name.orEmpty(),
-        authorName = authorName,
-        description = description,
-        avatarUrl = avatarUrl,
-        durationSec = duration,
-        releaseDateIso = releaseDate,
-        score = score
-    )
-}
