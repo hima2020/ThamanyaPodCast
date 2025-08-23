@@ -39,7 +39,9 @@ android {
     buildFeatures {
         compose = true
     }
+
 }
+
 
 dependencies {
 
@@ -47,6 +49,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":features:feature-home"))
     implementation(project("::features:feature-search"))
+    implementation(project(":design-system"))
 
     // Compose
     implementation(platform(libs.androidx.compose.bom))
@@ -70,7 +73,6 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
-
     // Testing
     testImplementation(libs.junit)
 

@@ -39,6 +39,7 @@ dependencies {
 
     // Modules
     implementation(project(":core"))
+    implementation(project(":design-system"))
 
     // Compose
     implementation(platform(libs.androidx.compose.bom))
@@ -47,6 +48,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
+
+//    // Pull-to-refresh
+//    implementation(libs.androidx.material3.pulltorefresh)
 
     // AndroidX
     implementation(libs.androidx.activity.compose)

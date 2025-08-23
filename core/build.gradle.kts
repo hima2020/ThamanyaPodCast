@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -36,9 +37,14 @@ android {
 }
 
 dependencies {
+
+    // Modules
+    implementation(project(":design-system"))
+
 // Kotlin/Coroutines
     api(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+
 
     // Networking (Retrofit/OkHttp + Kotlinx Serialization converter)
     api(libs.retrofit)
@@ -47,8 +53,21 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.kotlinx.serialization.json)
 
+    //compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.tooling.preview)
+    debugImplementation(libs.androidx.ui.tooling)
+    implementation(libs.coil.compose)
+
     // Paging core
     api(libs.paging.runtime)
+
+    // AndroidX
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
     // AndroidX (non-UI)
     implementation(libs.androidx.core.ktx)
