@@ -17,7 +17,7 @@ fun SectionDto.toDomain(): Section {
         "big_square", "big square" -> SectionType.BigSquare
         "2_lines_grid", "two_lines_grid", "2linesgrid" -> SectionType.TwoLinesGrid
         "queue" -> SectionType.Queue
-        else -> SectionType.Unknown(type) // keep the raw API value
+        else -> SectionType.Unknown(type)
     }
 
 

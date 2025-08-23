@@ -34,7 +34,6 @@ fun SectionHeaderView(
         verticalAlignment = Alignment.CenterVertically
     ) {
 
-        // Main title
         Text(
             text = title,
             color = titleColor,
@@ -47,7 +46,7 @@ fun SectionHeaderView(
         subtitle?.let {
             Text(
                 text = it,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                color = MaterialTheme.colorScheme.surface,
                 fontSize = 14.sp,
                 textAlign = TextAlign.End
             )

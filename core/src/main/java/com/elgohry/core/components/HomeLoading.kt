@@ -18,19 +18,15 @@ import com.elgohry.core.components.loading.SquareRowSkeleton
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Top Podcasts (square)
         item { SectionBlockTitleSkeleton() }
         item { SquareRowSkeleton() }
 
-        // Trending Episodes (big card)
         item { SectionBlockTitleSkeleton() }
         item { SquareRowSkeleton() }
 
-        // Bestselling Audiobooks (two lines grid-ish)
         item { SectionBlockTitleSkeleton() }
         item { SquareRowSkeleton() }
 
-        // New Podcasts (queue)
         item { SectionBlockTitleSkeleton() }
         item { SquareRowSkeleton() }
     }

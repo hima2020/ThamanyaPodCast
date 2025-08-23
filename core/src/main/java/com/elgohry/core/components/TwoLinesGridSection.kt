@@ -40,24 +40,21 @@ fun TwoLinesGridSection(
         HorizontalPager(
             state = pagerState, contentPadding = PaddingValues(
                 start = 16.dp,
-                end = (screenWidth - pageWidth - 16.dp) // Adjusted to show exactly 10% of next page
+                end = (screenWidth - pageWidth - 16.dp)
             ), pageSpacing = 8.dp, modifier = Modifier.fillMaxWidth()
         ) { page ->
-            // Each page contains two vertical items
             Column(
                 modifier = Modifier
                     .width(pageWidth)
                     .padding(vertical = 8.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                // First item
                 pairedItems[page].getOrNull(0)?.let { item ->
                     TwoLinesGridItem(
                         item = item)
 
                 }
 
-                // Second item (if exists)
                 pairedItems[page].getOrNull(1)?.let { item ->
                     TwoLinesGridItem(
                         item = item)

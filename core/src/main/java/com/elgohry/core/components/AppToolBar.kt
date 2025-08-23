@@ -25,8 +25,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.elgohry.core.R
 
 @Composable
 fun AppToolBar(
@@ -51,15 +53,25 @@ fun AppToolBar(
                 onSearchClick.invoke()
             }
         )
-
-        // User info
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
+            Image(
+                painter = painterResource(R.drawable.ic_flower),
+                contentDescription = "Profile",
+
+                modifier = Modifier
+                    .size(24.dp)
+                    .clip(CircleShape),
+                colorFilter = null,
+                contentScale = ContentScale.Crop
+            )
+            Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text = title,
                 color = MaterialTheme.colorScheme.onBackground,
                 style = MaterialTheme.typography.bodyLarge,
+                //fontFamily =  MaterialTheme.typography.bodyLarge.fontFamily,
                 fontWeight = FontWeight.Bold
             )
             Spacer(modifier = Modifier.width(8.dp))
@@ -69,7 +81,7 @@ fun AppToolBar(
                 modifier = Modifier
                     .size(32.dp)
                     .clip(CircleShape),
-                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground),
+                colorFilter = null,
                 contentScale = ContentScale.Crop
             )
         }

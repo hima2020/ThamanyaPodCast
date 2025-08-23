@@ -34,17 +34,6 @@ fun BigSquareItem(
         Column(
             Modifier
                 .fillMaxWidth()
-//                .background(
-//                    brush = Brush.verticalGradient(
-////                        colors = listOf(
-////                            colorTransparent,
-////                            colorBlackSemiTransparent10,
-////                            colorBlackSemiTransparent25,
-////                            colorBlackSemiTransparent50,
-////                            colorBlackSemiTransparent,
-////                        )
-//                    ),
-//                )
                 .padding(horizontal = 12.dp)
                 .padding(bottom = 12.dp, top = 16.dp)
 

@@ -51,7 +51,7 @@ fun QueueItem(
         Text(
             modifier = Modifier.fillMaxWidth(),
             text = episode.name,
-            color = MaterialTheme.colorScheme.onBackground,
+            color = MaterialTheme.colorScheme.surface,
             fontSize = 13.sp,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
@@ -62,7 +62,7 @@ fun QueueItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(
-                    color = MaterialTheme.colorScheme.background, RoundedCornerShape(12.dp)
+                    color = MaterialTheme.colorScheme.surface, RoundedCornerShape(12.dp)
                 )
                 .padding(12.dp)
         ) {

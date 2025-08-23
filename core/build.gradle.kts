@@ -37,9 +37,14 @@ android {
 }
 
 dependencies {
+
+    // Modules
+    implementation(project(":design-system"))
+
 // Kotlin/Coroutines
     api(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+
 
     // Networking (Retrofit/OkHttp + Kotlinx Serialization converter)
     api(libs.retrofit)

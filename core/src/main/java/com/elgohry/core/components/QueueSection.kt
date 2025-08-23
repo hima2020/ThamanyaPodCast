@@ -29,7 +29,7 @@ fun QueueSection(
             QueueItem(
                 modifier = Modifier
                     .width(itemWidth)
-                    .background(MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(12.dp))
+                    .background(MaterialTheme.colorScheme.background, RoundedCornerShape(12.dp))
                     .padding(12.dp)
                     , episode = item
             )

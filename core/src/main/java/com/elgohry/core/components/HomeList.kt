@@ -15,20 +15,9 @@ import com.elgohry.core.domain.entity.Section
 fun HomeList(
     items: List<Section>,
     listState: LazyListState,
+    showFooterLoading: Boolean,
     modifier: Modifier = Modifier
 ) {
-    if (items.isEmpty()) {
-        Box(
-            modifier = modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            HomeEmpty({
-
-            })
-        }
-        return
-    }
-
     LazyColumn(
         modifier = modifier.fillMaxSize(),
         state = listState,
@@ -38,11 +27,20 @@ fun HomeList(
         itemsIndexed(
             items = items,
             key = { _, section ->
-                // Build a stable key from known fields
                 "${section.name}"
             }
         ) { _, section ->
             SectionCard(section)
+        }
+        if (showFooterLoading) {
+            item(key = "footer-loading") {
+                Box(
+                    Modifier.fillMaxWidth().padding(16.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator()
+                }
+            }
         }
     }
 }

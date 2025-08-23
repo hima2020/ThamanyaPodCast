@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.elgohry.feature_home.presentation.screens.HomeScreen
 import com.elgohry.feature_search.presentation.screens.SearchScreen
+import com.elgohry.thamanyapodcast.splash.SplashScreen
 
 @Composable
 fun AppNavHost() {
@@ -13,8 +14,19 @@ fun AppNavHost() {
 
     NavHost(
         navController = nav,
-        startDestination = Routes.HOME
+        startDestination = Routes.SPLASH
     ) {
+
+        composable(Routes.SPLASH) {
+            SplashScreen(
+                onFinish = {
+                    nav.navigate(Routes.HOME) {
+                        popUpTo(Routes.SPLASH) { inclusive = true }
+                        launchSingleTop = true
+                    }
+                }
+            )
+        }
         composable(Routes.HOME) {
             HomeScreen(
                 onSearchClick = { nav.navigate(Routes.SEARCH) { launchSingleTop = true } }
