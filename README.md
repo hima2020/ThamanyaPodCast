@@ -55,7 +55,7 @@ A modern Android application built with **Jetpack Compose**, showcasing a **clea
 
 Follows **Clean Architecture** with MVVM-style presentation.
 
-```mermaid
+
 flowchart LR
   UI[Compose UI] --> VM[ViewModel]
   VM --> Repo[Repository (Interface)]
