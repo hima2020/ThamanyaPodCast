@@ -28,5 +28,21 @@ val AppTypography = Typography(
         fontFamily = IbmPlexSansArabic,
         fontWeight = FontWeight.Bold,
         fontSize = 20.sp
+    ),
+).run {
+    copy(
+        displayLarge = displayLarge.copy(fontFamily = IbmPlexSansArabic),
+        displayMedium = displayMedium.copy(fontFamily = IbmPlexSansArabic),
+        displaySmall = displaySmall.copy(fontFamily = IbmPlexSansArabic),
+        headlineLarge = headlineLarge.copy(fontFamily = IbmPlexSansArabic),
+        headlineMedium = headlineMedium.copy(fontFamily = IbmPlexSansArabic),
+        headlineSmall = headlineSmall.copy(fontFamily = IbmPlexSansArabic),
+        titleMedium = titleMedium.copy(fontFamily = IbmPlexSansArabic),
+        titleSmall = titleSmall.copy(fontFamily = IbmPlexSansArabic),
+        bodyMedium = bodyMedium.copy(fontFamily = IbmPlexSansArabic),
+        bodySmall = bodySmall.copy(fontFamily = IbmPlexSansArabic),
+        labelLarge = labelLarge.copy(fontFamily = IbmPlexSansArabic),
+        labelMedium = labelMedium.copy(fontFamily = IbmPlexSansArabic),
+        labelSmall = labelSmall.copy(fontFamily = IbmPlexSansArabic),
     )
-)
+}
