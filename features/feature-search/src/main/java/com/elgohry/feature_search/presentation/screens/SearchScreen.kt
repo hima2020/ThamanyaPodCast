@@ -113,13 +113,13 @@ fun SearchScreen(
                     )
 
                     is SearchUiState.Data -> {
-                        if (state.sections.isEmpty()) {
-                            HomeEmpty(onRefresh = { viewModel.onQueryChange(query) })
-                        } else {
+                        if (!state.sections.isEmpty()) {
                             HomeList(
                                 items = state.sections,
                                 listState = listState
                             )
+                        } else {
+
                         }
                     }
                 }
