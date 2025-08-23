@@ -42,10 +42,8 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.elgohry.core.components.HomeEmpty
 import com.elgohry.core.components.HomeError
 import com.elgohry.core.components.HomeList
-import com.elgohry.core.components.HomeLoading
 import com.elgohry.feature_search.presentation.state.SearchUiState
 import com.elgohry.feature_search.presentation.viewmodel.SearchViewModel
 
@@ -153,7 +151,9 @@ fun SearchScreen(
                         if (!state.sections.isEmpty()) {
                             HomeList(
                                 items = state.sections,
-                                listState = listState
+                                listState = listState,
+                                false
+
                             )
                         } else {
 
