@@ -8,6 +8,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.elgohry.core.components.AppToolBar
 //import androidx.compose.material3.pulltorefresh.PullToRefreshContainer
 import com.elgohry.core.components.HomeEmpty
 import com.elgohry.core.components.HomeError
@@ -19,22 +20,17 @@ import com.elgohry.feature_home.presentation.viewmodel.HomeViewModel
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
+    onSearchClick: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.state.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
     val listState = rememberLazyListState()
 
-   // val pullState = rememberPullToRefreshState()
 
+Column {
 
-//    if (pullState.isRefreshing) {
-//        LaunchedEffect(Unit) {
-//            viewModel.refresh()
-//            pullState.endRefresh()
-//        }
-//    }
-
+    AppToolBar(onSearchClick =onSearchClick)
     Scaffold(
         modifier = modifier,
         snackbarHost = { SnackbarHost(snackbarHostState) }
@@ -78,4 +74,6 @@ fun HomeScreen(
 //            )
         }
     }
+}
+
 }
