@@ -1,4 +1,4 @@
-package com.elgohry.feature_home.presentation.components.loading
+package com.elgohry.core.components.loading
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,8 +13,8 @@ import androidx.compose.material3.ElevatedCard
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.elgohry.feature_home.presentation.components.shimmer
-import com.elgohry.feature_home.presentation.components.skeleton
+import com.elgohry.core.components.shimmer
+import com.elgohry.core.components.skeleton
 
 @Composable
  fun SquareRowSkeleton() {

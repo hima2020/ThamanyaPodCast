@@ -1,12 +1,10 @@
-package com.elgohry.feature_home.presentation.components
+package com.elgohry.core.components
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.elgohry.core.domain.entity.Section
-import com.elgohry.core.domain.entity.SectionItem
 import com.elgohry.core.domain.entity.SectionType
 
 
@@ -51,7 +49,13 @@ fun SectionCard(
                     QueueSection(Modifier.fillMaxWidth(), section)
                 }
 
-                else -> {}
+                else -> {
+
+                        SquareSection(
+                            modifier = Modifier, section = section
+                        )
+                    
+                }
             }
         }
 

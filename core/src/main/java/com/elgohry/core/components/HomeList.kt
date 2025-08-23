@@ -1,4 +1,4 @@
-package com.elgohry.feature_home.presentation.components
+package com.elgohry.core.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -39,7 +39,7 @@ fun HomeList(
             items = items,
             key = { _, section ->
                 // Build a stable key from known fields
-                "${section.contentType}-${section.order}-${section.name}"
+                "${section.name}"
             }
         ) { _, section ->
             SectionCard(section)

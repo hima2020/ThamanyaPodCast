@@ -1,4 +1,4 @@
-package com.elgohry.feature_home.presentation.components
+package com.elgohry.core.components
 
 
 import androidx.compose.foundation.layout.Arrangement
@@ -8,8 +8,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.elgohry.feature_home.presentation.components.loading.SectionBlockTitleSkeleton
-import com.elgohry.feature_home.presentation.components.loading.SquareRowSkeleton
+import com.elgohry.core.components.loading.SectionBlockTitleSkeleton
+import com.elgohry.core.components.loading.SquareRowSkeleton
 
 @Composable
  fun HomeLoading() {

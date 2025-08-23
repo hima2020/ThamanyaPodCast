@@ -1,4 +1,4 @@
-package com.elgohry.feature_home.presentation.components
+package com.elgohry.core.components
 
 
 import androidx.compose.foundation.layout.Arrangement
@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.run
 
 
 @Composable

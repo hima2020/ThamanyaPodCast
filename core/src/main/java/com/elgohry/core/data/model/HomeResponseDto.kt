@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class HomeResponseDto(
     val sections: List<SectionDto>,
-    val pagination: PaginationDto
+    val pagination: PaginationDto?=null
 )

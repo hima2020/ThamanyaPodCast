@@ -1,4 +1,4 @@
-package com.elgohry.feature_home.presentation.components
+package com.elgohry.core.components
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

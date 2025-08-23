@@ -1,4 +1,4 @@
-package com.elgohry.feature_home.presentation.components
+package com.elgohry.core.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import com.elgohry.core.domain.entity.Section
+import kotlin.collections.getOrNull
 
 @Composable
 fun TwoLinesGridSection(

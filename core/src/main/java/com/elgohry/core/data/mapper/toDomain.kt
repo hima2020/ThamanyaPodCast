@@ -6,16 +6,6 @@ import com.elgohry.core.domain.entity.Section
 
 
 
-fun HomeResponseDto.toDomain(): HomePage =
-    HomePage(
-        sections = sections.map { it.toDomain() },
-        pagination = Pagination(
-            nextPage = pagination.nextPage,
-            totalPages = pagination.totalPages
-        )
-    )
-
-
 fun HomeResponseDto.toSections(): List<Section> =
     sections.map { it.toDomain() }
 
@@ -30,19 +20,11 @@ fun SectionDto.toDomain(): Section {
         else -> SectionType.Unknown(type) // keep the raw API value
     }
 
-    val cType = when (contentType) {
-        ContentTypeDto.PODCAST -> ContentType.PODCAST
-        ContentTypeDto.EPISODE -> ContentType.EPISODE
-        ContentTypeDto.AUDIO_BOOK -> ContentType.AUDIO_BOOK
-        ContentTypeDto.AUDIO_ARTICLE -> ContentType.AUDIO_ARTICLE
-    }
 
 
     return Section(
         name = name,
         type = typeDomain,
-        contentType = cType,
-        order = order,
         items = content.mapNotNull { it.toDomain() }
     )
 }
@@ -55,12 +37,8 @@ private fun SectionItemDto.toDomain(): SectionItem? {
         descriptionHtml = description,
         avatarUrl = avatarUrl,
         authorName=authorName,
-        episodeCount = episodeCount,
-        durationSec = duration,
         language = language,
-        priority = priority,
-        popularityScore = popularityScore,
-        score = score
+
     )
 }
 
