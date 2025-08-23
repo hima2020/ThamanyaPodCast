@@ -54,9 +54,3 @@ A modern Android application built with **Jetpack Compose**, showcasing a **clea
 ## Architecture
 
 Follows **Clean Architecture** with MVVM-style presentation.
-
-
-flowchart LR
-  UI[Compose UI] --> VM[ViewModel]
-  VM --> Repo[Repository (Interface)]
-  Repo -->|Network| API[Retrofit + Gson]
