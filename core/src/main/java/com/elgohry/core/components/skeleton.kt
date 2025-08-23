@@ -22,8 +22,8 @@ fun Modifier.skeleton(shapeRadius: Int = 12) =
 
 @Composable
 fun Modifier.shimmer(
-    baseColor: Color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
-    highlightColor: Color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.3f),
+    baseColor: Color = MaterialTheme.colorScheme.onSurfaceVariant,
+    highlightColor: Color = MaterialTheme.colorScheme.onSurfaceVariant,
 ): Modifier {
     val transition = rememberInfiniteTransition(label = "shimmer")
     val xAnim by transition.animateFloat(

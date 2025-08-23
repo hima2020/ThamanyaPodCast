@@ -1,5 +1,6 @@
 package com.elgohry.core.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -8,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
@@ -31,6 +33,19 @@ fun BigSquareItem(
             modifier = Modifier.fillMaxWidth()
         )
 
+        Box(
+            Modifier
+                .matchParentSize()
+                .background(
+                    Brush.verticalGradient(
+                        colorStops = arrayOf(
+                            0f   to Color.Black.copy(alpha = 0f),
+                            0.55f to Color.DarkGray.copy(alpha = 0.55f),
+                            1f   to Color.Black.copy(alpha = 0.90f)
+                        )
+                    )
+                )
+        )
         Column(
             Modifier
                 .fillMaxWidth()

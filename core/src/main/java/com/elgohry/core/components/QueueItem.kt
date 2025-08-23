@@ -34,44 +34,18 @@ fun QueueItem(
         modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically
-        ) {
-            episode.authorName?.let {
-                Text(
-                    text = it,
-//                    color = GrayText,
-                    fontSize = 13.sp, fontWeight = FontWeight.Bold
-                )
-            }
-
-            Spacer(modifier = Modifier.weight(1f))
-
-        }
-        Spacer(modifier = Modifier.height(4.dp))
-        Text(
-            modifier = Modifier.fillMaxWidth(),
-            text = episode.name,
-            color = MaterialTheme.colorScheme.surface,
-            fontSize = 13.sp,
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis,
-            textAlign = TextAlign.Start
-        )
-        Spacer(modifier = Modifier.height(4.dp))
-        Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(
                     color = MaterialTheme.colorScheme.surface, RoundedCornerShape(12.dp)
                 )
-                .padding(12.dp)
         ) {
             AsyncImage(
                 model = episode.avatarUrl,
                 contentScale = ContentScale.Crop,
                 contentDescription = episode.name,
                 modifier = Modifier
-                    .size(50.dp)
+                    .size(100.dp)
                     .clip(RoundedCornerShape(6.dp))
             )
             Column(
@@ -83,13 +57,10 @@ fun QueueItem(
                     text = episode.name,
                     color = MaterialTheme.colorScheme.onBackground,
                     fontSize = 14.sp,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                 )
 
                 Text(
                     text = episode.durationSec.toString(),
-//                    color = GrayText,
                     fontSize = 12.sp,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,

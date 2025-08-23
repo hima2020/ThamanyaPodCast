@@ -3,6 +3,7 @@ package com.elgohry.core.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
@@ -22,13 +23,14 @@ fun QueueSection(
     val itemWidth = LocalConfiguration.current.screenWidthDp.dp * 0.75f
     LazyRow(
         modifier = modifier,
-        contentPadding = PaddingValues(horizontal = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+        contentPadding = PaddingValues(horizontal = 4.dp),
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         items(section.items) { item ->
             QueueItem(
                 modifier = Modifier
                     .width(itemWidth)
+                    .height(100.dp)
                     .background(MaterialTheme.colorScheme.background, RoundedCornerShape(12.dp))
                     .padding(12.dp)
                     , episode = item
