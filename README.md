@@ -35,7 +35,6 @@ A modern Android application built with **Jetpack Compose**, showcasing a **clea
 - **Dynamic Content Display** — Podcasts, Episodes, Audiobooks, Audio Articles.
 - **Modular Architecture** — Clear separation across `app`, `domain`, and `data`.
 - **Debounced Search** — Efficient querying without spamming the network.
-- **Content Type Filtering** — Filter home content by type (e.g., Podcasts vs. Episodes).
 - **Adaptive Section Layouts** — Row, square items, big squares, two-line horizontal scroll.
 - **Graceful Loading & Error States** — Predictable user feedback & retry flows.
 - **Polymorphic JSON** — Custom Gson adapter to parse mixed item types safely.
@@ -49,7 +48,6 @@ A modern Android application built with **Jetpack Compose**, showcasing a **clea
 - **Coroutines** & **Flow**
 - **Retrofit** + **OkHttp**
 - **Gson** (with custom type adapters)
-- **Testing:** **MockK**, **Truth**, **Turbine**, **Compose UI Test**
 
 ---
 
