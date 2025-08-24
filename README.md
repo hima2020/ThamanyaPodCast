@@ -2,7 +2,7 @@
 
 <p align="center">
   <img alt="Android" src="https://img.shields.io/badge/Android-Modern%20App-3DDC84?logo=android&logoColor=white">
-  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-1.x-7F52FF?logo=kotlin&logoColor=white">
+  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?logo=kotlin&logoColor=white">
   <img alt="Jetpack Compose" src="https://img.shields.io/badge/Jetpack%20Compose-UI-4285F4?logo=jetpackcompose&logoColor=white">
   <img alt="Hilt" src="https://img.shields.io/badge/Hilt-DI-34A853?logo=google&logoColor=white">
   <img alt="Retrofit" src="https://img.shields.io/badge/Retrofit-Networking-0F9D58">
